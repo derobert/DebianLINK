@@ -1,0 +1,26 @@
+#!/bin/sh
+# Note: This runs inside the target system, via chroot.
+
+if [ -z "$1" ]; then
+	echo "Usage: $0 /dev/whatever"
+	exit 1
+fi
+disk="$1"
+
+cat <<FSTAB > /etc/fstab
+# dev             path   fs    opt       dump check
+LABEL=LINK-rootfs /      ext4  ro        0    1
+LABEL=LINK-home   /home  ext4  defaults  0    2
+FSTAB
+
+apt-get update
+aptitude -y install lvm2
+aptitude -y install linux-image-2.6-amd64
+aptitude -y install grub-pc
+
+cat <<MAP > /boot/grub/device.map
+(hd0)   $disk
+MAP
+
+grub-install "$disk"
+update-grub
