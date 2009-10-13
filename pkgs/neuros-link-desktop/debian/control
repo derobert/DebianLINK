@@ -1,0 +1,13 @@
+Source: neuros-link-desktop
+Section: misc
+Priority: optional
+Maintainer: Anthony DeRobertis <anthony@derobert.net>
+Build-Depends: debhelper (>= 4)
+Standards-Version: 3.6.2
+
+Package: neuros-link-desktop
+Architecture: all
+Recommends: nvidia-kernel-185.18.36
+Description: Standard packages for Neuros LINK
+ This package just Recommends: the default packages installed on the
+ Neuros LINK.
