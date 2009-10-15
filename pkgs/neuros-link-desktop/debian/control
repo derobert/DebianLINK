@@ -7,7 +7,8 @@ Standards-Version: 3.6.2
 
 Package: neuros-link-desktop
 Architecture: all
-Recommends: nvidia-kernel-185.18.36
+Recommends: nvidia-kernel-185.18.36, nvidia-glx (>= 185.18.36), less, xserver-xorg-input-evdev, xserver-xorg-video-dummy, xserver-xorg, iceweasel, flashplugin-nonfree, e16, mplayer-nogui, cpufrequtils, bzip2, e16keyedit, e16menuedit2, locales, nvidia-libvdpau1 (>= 185.18.36), xterm
+Conflicts: xserver-xorg-input-all, xserver-xorg-video-all, esound, esound-clients, radeontool, uswsusp, xserver-xorg-video-apm, xserver-xorg-video-ark, xserver-xorg-video-chips, xserver-xorg-video-cirrus, xserver-xorg-video-fbdev, xserver-xorg-video-i128, xserver-xorg-video-intel, xserver-xorg-video-mach64, xserver-xorg-video-mga, xserver-xorg-video-neomagic, xserver-xorg-video-nv, xserver-xorg-video-openchrome,xserver-xorg-video-r128, xserver-xorg-video-radeon, xserver-xorg-video-radeonhd, xserver-xorg-video-rendition, xserver-xorg-video-s3, xserver-xorg-video-s3virge, xserver-xorg-video-savage, xserver-xorg-video-siliconmotion, xserver-xorg-video-sis, xserver-xorg-video-sisusb, xserver-xorg-video-tdfx, xserver-xorg-video-trident, xserver-xorg-video-tseng, xserver-xorg-video-v4l, xserver-xorg-video-vesa, xserver-xorg-video-vmware, xserver-xorg-video-voodoo, xserver-xorg-video-voodoo 
 Description: Standard packages for Neuros LINK
  This package just Recommends: the default packages installed on the
  Neuros LINK.
