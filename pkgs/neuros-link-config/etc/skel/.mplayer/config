@@ -1,0 +1,47 @@
+# Write your default config options here!
+
+ao=alsa
+vo=vdpau
+stop-xscreensaver=on
+fs=yes
+af=scaletempo=stride=30:overlap=.9:search=30
+
+autoq=99
+vf-add=pp=ac
+
+# Default to first subtitle
+sid=0
+
+softvol=yes
+softvol-max=1000
+volstep=1
+channels=6
+
+saturation=0
+hue=0
+brightness=0
+contrast=0
+
+fontconfig=yes
+#font="Arial"
+font="Dejavu Sans"
+subfont-text-scale=3
+subfont-osd-scale=3
+
+#vf-add=screenshot
+
+
+[bigcache]
+profile-desc="Add a large cache, and prefill it"
+cache-min=90 
+cache=32768
+
+[aac]
+profile-desc="Channel mapping for AAC 5.1 surround"
+af=channels=6:6:0:4:1:0:2:1:3:2:4:3:5:5
+
+[ass]
+profile-desc="ASS-format subtitles"
+ass=yes
+embeddedfonts=yes
+vf-add=scale=1920:-2
