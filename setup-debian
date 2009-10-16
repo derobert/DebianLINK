@@ -62,12 +62,12 @@ SOURCES
 
 cat <<PREFS >> /etc/apt/preferences
 
-### NEUROS SETTINGS ###
-# would use preferences.d, but aptitude ignores it. Yeah...
+// ===NEUROS SETTINGS===
+// would use preferences.d, but aptitude ignores it. Yeah...
 Package: *
 Pin: release a=unstable
 Pin-Priority: 101
-### END NEUROS SETTINGS ###
+// ===END NEUROS SETTINGS===
 PREFS
 
 apt-key add /root/archive-keys

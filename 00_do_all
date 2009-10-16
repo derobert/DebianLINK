@@ -7,6 +7,7 @@ fi
 dev="$1"
 
 ./setup-flash "$dev"
+./run-mkfs "$dev"
 ./install-debian "$dev"
 ./unmount-flash "$dev"
 sync
