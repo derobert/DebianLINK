@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+	echo "Usage: $0 /dev/whatever"
+	exit 1
+fi
+dev="$1"
+
+./setup-flash "$dev"
+./install-debian "$dev"
+./unmount-flash "$dev"
+sync
+
+echo "OK, you should be able to pull the flash now."
