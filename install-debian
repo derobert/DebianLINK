@@ -19,8 +19,10 @@ mount --bind /dev/shm  "$root/dev/shm"
 mount --bind /proc     "$root/proc"
 mount --bind /sys      "$root/sys"
 
-exit
-cp setup-debian "$root/root"
+cp setup-debian "$root/root/"
+cp debconf-seed "$root/root/"
+cp archive-keys "$root/root/"
+cp asound-state "$root/root/"
 chmod +x "$root/root/setup-debian" # just in case
 chroot "$root" /root/setup-debian "$disk"
 

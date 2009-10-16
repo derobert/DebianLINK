@@ -7,14 +7,75 @@ if [ -z "$1" ]; then
 fi
 disk="$1"
 
+# We don't have any locales yet.
+export LC_ALL=C
+
+debconf-set-selections /root/debconf-seed
+
 cat <<FSTAB > /etc/fstab
-# dev             path   fs    opt       dump check
-LABEL=LINK-rootfs /      ext4  ro        0    1
-LABEL=LINK-home   /home  ext4  defaults  0    2
+# dev             path      fs    opt                 dump check
+LABEL=LINK-ROOTFS /         ext4  ro                  0    1
+LABEL=LINK-HOME   /home     ext4  defaults            0    2
+
+proc              /proc     proc  defaults            0    0 
+tmp               /tmp      tmpfs size=16m,mode=1777  0    0
+var_run           /var/run  tmpfs size=4m             0    0
 FSTAB
 
+cat <<KERNEL_IMG > /etc/kernel-img.conf
+do_initrd = Yes
+KERNEL_IMG
+
+echo 'NeurosLINK' > /etc/hostname
+cat <<HOSTS > /etc/hosts
+127.0.0.1       localhost
+127.0.1.1       NeurosLINK
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+HOSTS
+
+cat <<INTERFACES > /etc/network/interfaces
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+allow-hotplug eth0
+iface eth0 inet dhcp
+INTERFACES
+
+cat <<SOURCES > /etc/apt/sources.list.d/neuros-link.list
+deb http://planck.derobert.net/neuros-link hydrogen/
+deb http://www.debian-multimedia.org squeeze main
+SOURCES
+
+cat <<SOURCES > /etc/apt/sources.list.d/neuros-temporary.list
+# We're temporarily using unstable until some needed packages show up in
+# squeeze.
+deb http://http.us.debian.org/debian unstable main contrib non-free
+SOURCES
+
+cat <<PREFS >> /etc/apt/preferences
+
+### NEUROS SETTINGS ###
+# would use preferences.d, but aptitude ignores it. Yeah...
+Package: *
+Pin: release a=unstable
+Pin-Priority: 101
+### END NEUROS SETTINGS ###
+PREFS
+
+apt-key add /root/archive-keys
+
+# Get it bootable
 apt-get update
-aptitude -y install lvm2
+aptitude -y install lvm2 initramfs-tools debconf-english dash
+echo 'ROOTDELAY=8' > /etc/initramfs-tools/conf.d/neuros-rootdelay
 aptitude -y install linux-image-2.6-amd64
 aptitude -y install grub-pc
 
@@ -24,3 +85,29 @@ MAP
 
 grub-install "$disk"
 update-grub
+
+# Install tons of software
+aptitude -y install neuros-link-desktop neuros-link-undesktop \
+	neuros-link-config
+
+# Install alsa state
+cp -f root/asound-state /var/lib/alsa/asound.state
+
+# Setup alsa & create our user. Do this last to make sure /etc/skel gets
+# copied correctly.
+echo 'link-user ALL=(ALL) ALL' >> /etc/sudoers
+adduser --gecos 'LINK User,,,' --disabled-password link-user
+usermod -p '$1$zWL.ID4z$sAmBcTrfg7XK0GQcwcDS80' link-user # ntv
+for g in video adm dialout cdrom floppy audio plugdev users; do
+	adduser link-user "$g"
+done
+
+
+echo
+echo
+read -p "Would you like to spawn a shell in the chroot? (y/n)"
+case $REPLY in
+	[yY] | [yY][eE][sS] )
+		bash -i
+		;;
+esac

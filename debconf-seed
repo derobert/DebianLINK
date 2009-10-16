@@ -1,0 +1,15 @@
+tzdata	tzdata/Zones/US	select	Eastern
+console-setup	console-setup/variant	select	USA
+grub-pc	grub-pc/install_devices	multiselect	
+console-setup	console-setup/fontsize-text	select	16
+console-setup	console-setup/compose	select	Caps Lock
+grub-pc	grub2/linux_cmdline	string	
+debconf	debconf/priority	select	high
+fontconfig-config	fontconfig/enable_bitmaps	boolean	true
+locales	locales/default_environment_locale	select	en_US.UTF-8
+locales locales/locales_to_be_generated multiselect     en_US.UTF-8 UTF-8
+portmap	portmap/loopback	boolean	false
+dash	dash/sh	boolean	true
+grub-pc	grub2/linux_cmdline_default	string	
+cpufrequtils	cpufrequtils/enable	boolean	true
+console-setup	console-setup/fontsize-fb	select	16

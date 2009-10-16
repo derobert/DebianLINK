@@ -1,3 +1,10 @@
+neuros-link-desktop (0.1~a5) hydrogen; urgency=low
+
+  * Split into two packages: -desktop for the recommends; -undesktop for the
+  	conflicts.
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Thu, 15 Oct 2009 00:18:31 -0400
+
 neuros-link-desktop (0.1~a4) hydrogen; urgency=low
 
   * Add some conflicts to get rid of unwanted packages.

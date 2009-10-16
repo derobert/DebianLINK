@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<todo version="0.1.20">
+    <note priority="medium" time="1255660211" done="1255661349">
+        install alsa-utils
+    </note>
+    <note priority="medium" time="1255660225" done="1255661353">
+        install xrdb
+    </note>
+    <note priority="medium" time="1255660235" done="1255661358">
+        install xinit
+    </note>
+    <note priority="medium" time="1255660250" done="1255661361">
+        unmute sound
+    </note>
+    <note priority="medium" time="1255660361" done="1255661362">
+        install openssh
+    </note>
+    <note priority="medium" time="1255660374">
+        keybinding eterm -&gt; xterm
+    </note>
+    <note priority="medium" time="1255660387">
+        make r/o work, or mount rw
+    </note>
+    <note priority="medium" time="1255660398" done="1255661723">
+        home had wrong label (uc instead of lc)
+    </note>
+    <note priority="medium" time="1255660429">
+        nuke virtual desktop
+    </note>
+</todo>

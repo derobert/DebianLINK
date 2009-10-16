@@ -1,2 +1,3 @@
-This package just Recommends the packages we install by default on the
-Neuros LINK.
+neuros-link-desktop just Recommends the packages we install by default
+on the Neuros LINK. neuros-link-undesktop prevents pulling in of
+unwanted packages to save flash space.
