@@ -10,10 +10,10 @@ Architecture: all
 Description: Configuration files that are part of the Neuros LINK
  This package contains configuration files for other packages to make them work
  the way we want on the LINK.
-
+ .
  Feel free to edit any of the configuration files provided; your changes will
  not be overwritten, in accordance with Debian policy.
-
+ .
  Also, it is recommended that this package be either installed or purged;
  removing it will (once again in accordance with Debian policy) leave the
  configuration files around and active. Purging will, of course, remove
