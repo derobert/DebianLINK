@@ -1,3 +1,9 @@
+neuros-link-config (0.1~a2) hydrogen; urgency=low
+
+  * mplayer conf in /etc/skel
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Thu, 15 Oct 2009 23:03:00 -0400
+
 neuros-link-config (0.1~a1) hydrogen; urgency=low
 
   * Initial release.

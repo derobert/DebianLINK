@@ -1,3 +1,9 @@
+neuros-link-desktop (0.1~a6) hydrogen; urgency=low
+
+  * More packages.
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Thu, 15 Oct 2009 22:55:58 -0400
+
 neuros-link-desktop (0.1~a5) hydrogen; urgency=low
 
   * Split into two packages: -desktop for the recommends; -undesktop for the
