@@ -1,0 +1,5 @@
+PACKAGE (0.1~a1) hydrogen; urgency=low
+
+  * Initial release.
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Thu, 15 Oct 2009 20:58:47 -0400

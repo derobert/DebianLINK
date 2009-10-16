@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+build:
+
+binary: binary-arch binary-indep
+
+binary-arch:
+
+binary-indep:
+
+clean:
+	dh_clean
