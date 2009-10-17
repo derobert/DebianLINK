@@ -2,9 +2,7 @@
 set -e
 
 for lv in LINK-rootfs; do
-	mkfs.btrfs \
-		-L `echo $lv | tr a-z A-Z` \
-		-O dir_index,filetype,flex_bg,extent,uninit_bg,resize_inode,sparse_super \
+	mkfs.btrfs -L `echo $lv | tr a-z A-Z` /dev/mapper/$lv
 done
 
 for lv in LINK-home; do
