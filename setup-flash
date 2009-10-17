@@ -19,5 +19,6 @@ dd if=/dev/zero of="$part" bs=512 count=1
 
 pvcreate "$part"
 vgcreate LINK "$part"
+lvcreate -L 48m -n 'boot' LINK
 lvcreate -L 1g -n 'rootfs' LINK
 lvcreate -L 512m -n 'home' LINK

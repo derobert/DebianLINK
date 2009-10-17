@@ -8,9 +8,11 @@ fi
 disk="$1"
 root=`mktemp -d`
 
-mount /dev/mapper/LINK-rootfs "$root"
+mount /dev/mapper/LINK-rootfs -t btrfs -o compress,ssd "$root"
+mkdir -p "$root/boot"
+mount /dev/mapper/LINK-boot -t ext2 "$root/boot"
 mkdir -p "$root/home"
-mount /dev/mapper/LINK-home "$root/home"
+mount /dev/mapper/LINK-home -t ext4 "$root/home"
 
 debootstrap --arch amd64 --components 'main,contrib,non-free' squeeze "$root" http://http.us.debian.org/debian
 
@@ -27,11 +29,15 @@ cp asound-state "$root/root/"
 chmod +x "$root/root/setup-debian" # just in case
 chroot "$root" /root/setup-debian "$disk"
 
+set +e # go through as many as possible
 umount "$root/dev/pts"
 umount "$root/dev/shm"
 umount "$root/dev"
 umount "$root/sys"
 umount "$root/proc"
 umount "$root/home"
+umount "$root/boot"
 umount "$root"
+set -e
+
 rmdir "$root"

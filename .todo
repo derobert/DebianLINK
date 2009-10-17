@@ -27,7 +27,7 @@
     <note priority="medium" time="1255660374">
         keybinding eterm -&gt; xterm
     </note>
-    <note priority="medium" time="1255660387">
+    <note priority="medium" time="1255660387" done="1255757871">
         make r/o work, or mount rw
     </note>
     <note priority="medium" time="1255660429">
@@ -48,11 +48,29 @@
     <note priority="medium" time="1255662076">
         ttf-mscorefonts-installer
     </note>
+    <note priority="medium" time="1255755996">
+        Do something about /var/log/apt
+    </note>
+    <note priority="medium" time="1255756217">
+        Configure apt, etc. to mount rootfs rw when needed
+    </note>
+    <note priority="medium" time="1255756298">
+        Firefox cache on tmpfs
+    </note>
+    <note priority="medium" time="1255756356">
+        Have portmap NOT bind to loopback
+    </note>
     <note priority="low" time="1255661830">
         add lwresd?
     </note>
     <note priority="low" time="1255662227">
         mplayer default to -vc FOOvdpau when applicable
+    </note>
+    <note priority="low" time="1255667391">
+        ntpd
+    </note>
+    <note priority="low" time="1255755544">
+        minimize logging by editing rsyslogd config
     </note>
     <note priority="verylow" time="1255661899">
         splash screens

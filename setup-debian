@@ -14,14 +14,19 @@ export LC_ALL=C
 debconf-set-selections /root/debconf-seed
 
 cat <<FSTAB > /etc/fstab
-# dev             path      fs    opt                 dump check
-LABEL=LINK-ROOTFS /         ext4  ro                  0    1
-LABEL=LINK-HOME   /home     ext4  defaults            0    2
+# dev             path             fs    opt                 dump check
+LABEL=LINK-ROOTFS /                btrfs ro                  0    1
+LABEL=LINK-HOME   /home            ext4  defaults            0    2
 
-proc              /proc     proc  defaults            0    0 
-tmp               /tmp      tmpfs size=16m,mode=1777  0    0
-var_run           /var/run  tmpfs size=4m             0    0
+proc              /proc            proc  defaults            0    0 
+tmp               /tmp             tmpfs size=16m,mode=1777  0    0
+var_run           /var/run         tmpfs size=4m             0    0
+var_lock          /var/lock        tmpfs size=4m             0    0
+var_log           /var/log         tmpfs size=32m            0    0
+var_cache_hald    /var/cache_hald  tmpfs size=4m             0    0
 FSTAB
+
+ln -s /proc/mounts /etc/mtab
 
 cat <<KERNEL_IMG > /etc/kernel-img.conf
 do_initrd = Yes
@@ -65,9 +70,19 @@ cat <<PREFS >> /etc/apt/preferences
 
 // ===NEUROS SETTINGS===
 // would use preferences.d, but aptitude ignores it. Yeah...
+
 Package: *
 Pin: release a=unstable
 Pin-Priority: 101
+
+Package: nvidia-glx
+Pin: version 185.18.36*
+Pin-Priority: 500
+
+Package: nvidia-libvdpau1
+Pin: version 185.18.36*
+Pin-Priority: 500
+
 // ===END NEUROS SETTINGS===
 PREFS
 
@@ -91,6 +106,7 @@ update-grub
 aptitude -y install neuros-link-desktop neuros-link-undesktop \
 	neuros-link-config
 apt-get clean # clean out cache
+update-rc.d urandom disable S 2 3 4 5
 
 # Install alsa state
 cp -f root/asound-state /var/lib/alsa/asound.state

@@ -1,3 +1,19 @@
+neuros-link-config (0.1~a4) hydrogen; urgency=low
+
+  * Scale the height to 1080, instead of the width to 1920, so that 4:3
+  	material still works. Oops.
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Sat, 17 Oct 2009 01:35:01 -0400
+
+neuros-link-config (0.1~a3) hydrogen; urgency=low
+
+  * Correct default output device for alsa; it is 3, not 2.
+  * Change mplayer default to xv. VDPAU has issues: screen tearing (not sync'd
+  	to vlank, I guess) and higher CPU /unless/ you're actually using a vdpau
+  	codec. Also, it doesn't work with eg., -vf pp.
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Sat, 17 Oct 2009 01:15:42 -0400
+
 neuros-link-config (0.1~a2) hydrogen; urgency=low
 
   * mplayer conf in /etc/skel

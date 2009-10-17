@@ -1,3 +1,9 @@
+neuros-link-desktop (0.1~a7) hydrogen; urgency=low
+
+  * Even more packages: resolvconf, strace, acpid, nfs-common
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Sat, 17 Oct 2009 01:02:09 -0400
+
 neuros-link-desktop (0.1~a6) hydrogen; urgency=low
 
   * More packages.

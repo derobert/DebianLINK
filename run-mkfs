@@ -1,12 +1,23 @@
 #!/bin/sh
 set -e
 
-for lv in LINK-rootfs LINK-home; do
+for lv in LINK-rootfs; do
+	mkfs.btrfs \
+		-L `echo $lv | tr a-z A-Z` \
+		-O dir_index,filetype,flex_bg,extent,uninit_bg,resize_inode,sparse_super \
+done
+
+for lv in LINK-home; do
 	mkfs.ext4 \
 		-E lazy_itable_init=1 -L `echo $lv | tr a-z A-Z` \
 		-O dir_index,filetype,flex_bg,extent,uninit_bg,resize_inode,sparse_super \
 		/dev/mapper/$lv
 done
+
+for lv in LINK-boot; do
+	mkfs.ext2 -L `echo $lv | tr a-z A-Z` /dev/mapper/$lv
+done
+		
 
 # Silly to reserve space for root on a random user's home dir
 tune2fs -r 0 /dev/mapper/LINK-home
