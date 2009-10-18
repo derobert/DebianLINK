@@ -1,0 +1,29 @@
+#!/bin/sh
+
+root=`mktemp -d`
+lvchange -ay LINK # just in case
+
+mount /dev/mapper/LINK-rootfs -t btrfs -o compress,ssd "$root"
+mount /dev/mapper/LINK-boot -t ext2 "$root/boot"
+mount /dev/mapper/LINK-home -t ext4 "$root/home"
+mount --bind /dev      "$root/dev"
+mount --bind /dev/pts  "$root/dev/pts"
+mount --bind /dev/shm  "$root/dev/shm"
+mount --bind /proc     "$root/proc"
+mount --bind /sys      "$root/sys"
+
+echo "The following shell prompt will be inside the LINK system: "
+chroot "$root" /bin/bash -i
+
+echo "chroot session done; unmounting!"
+umount "$root/dev/pts"
+umount "$root/dev/shm"
+umount "$root/dev"
+umount "$root/sys"
+umount "$root/proc"
+umount "$root/home"
+umount "$root/boot"
+umount "$root"
+rmdir "$root"
+
+echo "unmount done; note that you'll need to use unmount-flash before pulling!"
