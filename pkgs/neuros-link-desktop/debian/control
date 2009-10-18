@@ -7,7 +7,7 @@ Standards-Version: 3.6.2
 
 Package: neuros-link-desktop
 Architecture: all
-Recommends: nvidia-kernel-185.18.36, nvidia-glx (>= 185.18.36), less, xserver-xorg-input-evdev, xserver-xorg-video-dummy, xserver-xorg, iceweasel, flashplugin-nonfree, e16, mplayer-nogui, cpufrequtils, bzip2, e16keyedit, e16menuedit2, locales, nvidia-libvdpau1 (>= 185.18.36), xterm, alsa-utils, xinit, x11-xserver-utils, openssh-client, sudo, resolvconf, strace, acpid, nfs-common
+Recommends: nvidia-kernel-185.18.36, nvidia-glx (>= 185.18.36), less, xserver-xorg-input-evdev, xserver-xorg-video-dummy, xserver-xorg, iceweasel, flashplugin-nonfree, e16, mplayer-nogui, cpufrequtils, bzip2, e16keyedit, e16menuedit2, locales, nvidia-libvdpau1 (>= 185.18.36), xterm, alsa-utils, xinit, x11-xserver-utils, openssh-client, sudo, resolvconf, strace, acpid, nfs-common, btrfs-tools
 Description: Standard packages for Neuros LINK
  This package just Recommends: the default packages installed on the
  Neuros LINK.

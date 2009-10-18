@@ -1,3 +1,9 @@
+neuros-link-desktop (0.1~a8) hydrogen; urgency=low
+
+  * btrfs-tools would be a good idea.
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Sun, 18 Oct 2009 04:30:28 -0400
+
 neuros-link-desktop (0.1~a7) hydrogen; urgency=low
 
   * Even more packages: resolvconf, strace, acpid, nfs-common
