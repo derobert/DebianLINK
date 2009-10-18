@@ -1,3 +1,9 @@
+neuros-link-config (0.1~a5) hydrogen; urgency=low
+
+  * add skeleton .Xresources
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Sun, 18 Oct 2009 04:34:05 -0400
+
 neuros-link-config (0.1~a4) hydrogen; urgency=low
 
   * Scale the height to 1080, instead of the width to 1920, so that 4:3
