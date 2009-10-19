@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <todo version="0.1.20">
+    <note priority="veryhigh" time="1255854924" done="1255855086">
+        Figure out what to do with /var/lib/dbus/machine-id
+    </note>
     <note priority="high" time="1255661909" done="1255854937">
         get it working r/o
     </note>
@@ -33,9 +36,6 @@
     <note priority="medium" time="1255661882" done="1255854904">
         gtk, e16 font sizes
     </note>
-    <note priority="veryhigh" time="1255854924" done="1255855086">
-        Figure out what to do with /var/lib/dbus/machine-id
-    </note>
     <note priority="high" time="1255664893">
         set policy for handling keymaps (console-data) via debconf seed
     </note>
@@ -63,6 +63,24 @@
     <note priority="medium" time="1255756356">
         Have portmap NOT bind to loopback
     </note>
+    <note priority="medium" time="1255857604">
+        split config package into essential vs. non-essential
+    </note>
+    <note priority="medium" time="1255857622">
+        move config files written by setup-debian to essential config package
+    </note>
+    <note priority="medium" time="1255883999">
+        xfonts-jmk
+    </note>
+    <note priority="medium" time="1255884181">
+        nvidia-settings
+    </note>
+    <note priority="medium" time="1255902859">
+        ntpd
+    </note>
+    <note priority="medium" time="1255903097">
+        xfonts-base (wtf, we don't have!)
+    </note>
     <note priority="low" time="1255661830">
         add lwresd?
     </note>
@@ -74,6 +92,21 @@
     </note>
     <note priority="low" time="1255755544">
         minimize logging by editing rsyslogd config
+    </note>
+    <note priority="low" time="1255857539">
+        setup wizard
+        <note priority="low" time="1255857554">
+            make /var/lib/dbus/machine-id different on each machine
+        </note>
+        <note priority="low" time="1255902856">
+            dpkg-reconfigure tzdata
+        </note>
+    </note>
+    <note priority="low" time="1255857735">
+        better e16 theme; maybe orange juice? Everyone loves orange juice!
+    </note>
+    <note priority="low" time="1255902970">
+        where are the epplets?
     </note>
     <note priority="verylow" time="1255661899">
         splash screens
