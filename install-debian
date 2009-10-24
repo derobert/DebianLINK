@@ -41,6 +41,4 @@ umount "$root/proc"
 umount "$root/home"
 umount "$root/boot"
 umount "$root"
-set -e
-
 rmdir "$root"
