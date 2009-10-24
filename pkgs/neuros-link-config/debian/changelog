@@ -1,3 +1,10 @@
+neuros-link-config (0.1~a6) hydrogen; urgency=low
+
+  * Add new package for essential config to boot. Will take over stuff that
+  	used to be created by the setup script.
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Sat, 24 Oct 2009 03:32:32 -0400
+
 neuros-link-config (0.1~a5) hydrogen; urgency=low
 
   * add skeleton .Xresources

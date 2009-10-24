@@ -1,0 +1,6 @@
+debian/files
+debian/*.log
+debian/neuros-link-bootconfig
+debian/neuros-link-config
+debian/*.substvars
+debian/tmp

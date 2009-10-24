@@ -1,0 +1,6 @@
+#!/bin/sh
+
+dpkg-divert --package neuros-link-bootconfig --add --rename \
+	--divert /etc/initramfs-tools/modules.save /etc/initramfs-tools/modules
+
+#DEBHELPER#

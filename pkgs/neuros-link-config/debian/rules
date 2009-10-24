@@ -7,12 +7,16 @@ binary: binary-arch binary-indep
 binary-arch:
 
 binary-indep:
-	dh_installdirs etc
-	find etc \( -type f -not -path '*/.svn/*' \) -print0 | xargs -0n1 dh_install
+	dh_prep
+	mkdir -p debian/tmp
+	cp -a etc debian/tmp/etc
+	dh_installdirs --all etc
+	dh_install --fail-missing
 	dh_gencontrol
 	dh_installdeb
 	dh_installdocs
 	dh_installchangelogs
+	dh_md5sums
 	dh_builddeb
 
 clean:

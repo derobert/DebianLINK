@@ -1,5 +1,5 @@
 Source: neuros-link-config
-Section: misc
+Section: admin
 Priority: optional
 Maintainer: Anthony DeRobertis <anthony@derobert.net>
 Build-Depends: debhelper (>= 7)
@@ -7,6 +7,7 @@ Standards-Version: 3.8.3
 
 Package: neuros-link-config
 Architecture: all
+Depends: neuros-link-bootconfig (>= 0.1~a6)
 Description: Configuration files that are part of the Neuros LINK
  This package contains configuration files for other packages to make them work
  the way we want on the LINK.
@@ -18,3 +19,13 @@ Description: Configuration files that are part of the Neuros LINK
  removing it will (once again in accordance with Debian policy) leave the
  configuration files around and active. Purging will, of course, remove
  your changes.
+
+Package: neuros-link-bootconfig
+Architecture: all
+Priority: required
+Essential: yes
+Description: Configuration files that are needed to boot
+ This package contains configuration files without which the Neuros LINK will
+ not boot.
+ .
+ You are free to edit the files if you wish.

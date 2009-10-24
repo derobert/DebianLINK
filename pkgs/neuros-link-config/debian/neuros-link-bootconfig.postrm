@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ "purge" = "$1" ] || [ "abort-install" = "$1" ]; then
+	dpkg-divert --package neuros-link-bootconfig --remove --rename \
+		--divert /etc/initramfs-tools/modules.save /etc/initramfs-tools/modules
+fi
+
+#DEBHELPER#

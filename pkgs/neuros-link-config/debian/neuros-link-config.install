@@ -1,0 +1,5 @@
+debian/tmp/etc/asound.conf
+debian/tmp/etc/kernel-img.conf
+debian/tmp/etc/X11/xorg.conf
+debian/tmp/etc/skel/.Xresources
+debian/tmp/etc/skel/.mplayer/config

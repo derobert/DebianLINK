@@ -1,0 +1,2 @@
+debian/tmp/etc/initramfs-tools/conf.d/neuros-conf
+debian/tmp/etc/initramfs-tools/modules
