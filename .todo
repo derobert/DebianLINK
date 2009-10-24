@@ -81,6 +81,9 @@
     <note priority="medium" time="1255903097">
         xfonts-base (wtf, we don't have!)
     </note>
+    <note priority="medium" time="1256371907">
+        Change setup script to not do work that -bootconfig is doing
+    </note>
     <note priority="low" time="1255661830">
         add lwresd?
     </note>
