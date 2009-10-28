@@ -9,7 +9,8 @@ binary-arch:
 binary-indep:
 	dh_prep
 	mkdir -p debian/tmp
-	cp -a etc debian/tmp/etc
+	cp -r --preserve=timestamps etc debian/tmp/etc
+	cp -r --preserve=timestamps usr debian/tmp/usr
 	dh_installdirs --all etc
 	dh_install --fail-missing
 	dh_gencontrol

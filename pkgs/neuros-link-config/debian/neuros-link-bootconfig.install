@@ -1,2 +1,4 @@
+debian/tmp/etc/fstab
 debian/tmp/etc/initramfs-tools/conf.d/neuros-conf
 debian/tmp/etc/initramfs-tools/modules
+debian/tmp/usr/lib/neuros-link/rootfs-size-fix 

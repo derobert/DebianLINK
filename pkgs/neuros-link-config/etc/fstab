@@ -1,0 +1,15 @@
+# dev             path             fs    opt                 dump check
+LABEL=LINK-ROOTFS /                btrfs ro,compress         0    1
+LABEL=LINK-HOME   /home            ext4  defaults            0    2
+LABEL=LINK-BOOT   /boot            ext2  defaults            0    3
+
+proc              /proc            proc  defaults            0    0 
+tmp               /tmp             tmpfs size=16m,mode=1777  0    0
+var_run           /var/run         tmpfs size=4m             0    0
+var_lock          /var/lock        tmpfs size=4m             0    0
+var_log           /var/log         tmpfs size=32m            0    0
+var_cache_hald    /var/cache/hald  tmpfs size=4m             0    0
+
+### Example NFS mounts
+# maxwell.home:/home/GROUPS/videos  /mnt/Maxwell/videos  nfs  rw,_netdev  0  0
+# maxwell.home:/home/GROUPS/music   /mnt/Maxwell/music   nfs  ro,_netdev  0  0

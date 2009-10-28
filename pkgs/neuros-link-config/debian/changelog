@@ -1,3 +1,10 @@
+neuros-link-config (0.1~a7) hydrogen; urgency=low
+
+  * Add fstab.
+  * Add script to check that the rootfs is large enough, and resize if not.
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Tue, 27 Oct 2009 22:35:07 -0400
+
 neuros-link-config (0.1~a6) hydrogen; urgency=low
 
   * Add new package for essential config to boot. Will take over stuff that

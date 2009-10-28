@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+
+# Assumption: This is run during upgrade, when rootfs is r/w.
+
+size=`lvs --units b --nosuffix -o lv_name,lv_size --separator ':' | grep rootfs: | cut -d: -f2`
+
+# We'll use 10% less than our target size just in case someone has
+# different LVM block sizes and LVM has to round.
+if [ "$size" -lt 1207959552 ]; then
+	echo -n "Growing rootfs lv... " >&2
+	lvresize -Ay -L 1280M LINK/rootfs
+	echo "done" >&2
+
+	new_size=`lvs --units k --nosuffix -o lv_name,lv_size --separator ':' | grep rootfs: | cut -d: -f2 | cut -d. -f1`
+	echo -n "Growing rootfs fs... " >&2
+	btrfsctl -r ${new_size}k / || true # returns 1 for some reason
+	echo "done." >&2
+else
+	echo "Root filesystem already 1.25 GiB." >&2
+fi
