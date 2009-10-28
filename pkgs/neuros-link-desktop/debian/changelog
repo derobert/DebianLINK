@@ -1,3 +1,9 @@
+neuros-link-desktop (0.1~a9) hydrogen; urgency=low
+
+  * Add xbmc & its skin.
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Tue, 27 Oct 2009 23:04:36 -0400
+
 neuros-link-desktop (0.1~a8) hydrogen; urgency=low
 
   * btrfs-tools would be a good idea.
