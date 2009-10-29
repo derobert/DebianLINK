@@ -1,0 +1,5 @@
+debian/files
+debian/*.log
+debian/neuros-link-desktop/
+debian/neuros-link-undesktop/
+debian/*.substvars
