@@ -1,3 +1,9 @@
+neuros-link-config (0.1~a8) hydrogen; urgency=low
+
+  * Add init script to auto-create /var/log/apt
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Thu, 29 Oct 2009 00:59:25 -0400
+
 neuros-link-config (0.1~a7) hydrogen; urgency=low
 
   * Add fstab.

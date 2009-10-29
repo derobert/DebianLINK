@@ -13,6 +13,7 @@ binary-indep:
 	cp -r --preserve=timestamps usr debian/tmp/usr
 	dh_installdirs --all etc
 	dh_install --fail-missing
+	dh_installinit -p neuros-link-config --name neuros-tmpfsdirs --no-start -r -o -u "start 21 S ."
 	dh_gencontrol
 	dh_installdeb
 	dh_installdocs
