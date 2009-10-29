@@ -51,7 +51,7 @@
     <note priority="medium" time="1255662076">
         ttf-mscorefonts-installer
     </note>
-    <note priority="medium" time="1255755996">
+    <note priority="medium" time="1255755996" done="1256792746">
         Do something about /var/log/apt
     </note>
     <note priority="medium" time="1255756217">
