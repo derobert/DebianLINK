@@ -1,3 +1,9 @@
+neuros-link-desktop (0.1~a10) hydrogen; urgency=low
+
+  * Add libnss-lwres in hopes of speeding up browsing.
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Thu, 29 Oct 2009 23:35:52 -0400
+
 neuros-link-desktop (0.1~a9) hydrogen; urgency=low
 
   * Add xbmc & its skin.
