@@ -1,3 +1,10 @@
+neuros-link-config (0.1~a9) hydrogen; urgency=low
+
+  * Change asound.conf; this seems to work better (e.g., mplayer w/ 5.1 sound
+  	works now)
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Thu, 29 Oct 2009 23:14:55 -0400
+
 neuros-link-config (0.1~a8) hydrogen; urgency=low
 
   * Add init script to auto-create /var/log/apt
