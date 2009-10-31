@@ -1,4 +1,5 @@
 debian/tmp/etc/asound.conf
+debian/tmp/etc/default/nodm
 debian/tmp/etc/init.d/neuros-tmpfsdirs
 debian/tmp/etc/kernel-img.conf
 debian/tmp/etc/resolvconf/update-libc.d/neuros-lwresd 
