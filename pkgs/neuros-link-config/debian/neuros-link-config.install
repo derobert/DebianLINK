@@ -1,6 +1,7 @@
 debian/tmp/etc/asound.conf
 debian/tmp/etc/init.d/neuros-tmpfsdirs
 debian/tmp/etc/kernel-img.conf
-debian/tmp/etc/X11/xorg.conf
-debian/tmp/etc/skel/.Xresources
+debian/tmp/etc/resolvconf/update-libc.d/neuros-lwresd 
 debian/tmp/etc/skel/.mplayer/config
+debian/tmp/etc/skel/.Xresources
+debian/tmp/etc/X11/xorg.conf

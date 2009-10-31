@@ -1,3 +1,9 @@
+neuros-link-config (0.1~a11) hydrogen; urgency=low
+
+  * Make lwresd restart when resolv.conf is updated
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Fri, 30 Oct 2009 23:48:36 -0400
+
 neuros-link-config (0.1~a10) hydrogen; urgency=low
 
   * add nsswitch.conf
