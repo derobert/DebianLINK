@@ -1,3 +1,10 @@
+neuros-link-desktop (0.1~a13) hydrogen; urgency=low
+
+  * Add nvidia-settings
+  * add xfonts-base
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Sat, 31 Oct 2009 01:26:20 -0400
+
 neuros-link-desktop (0.1~a12) hydrogen; urgency=low
 
   * add neuros-link-util recommend
