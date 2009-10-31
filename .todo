@@ -39,8 +39,14 @@
     <note priority="medium" time="1255755996" done="1256792746">
         Do something about /var/log/apt
     </note>
+    <note priority="medium" time="1255857604" done="1256956849">
+        split config package into essential vs. non-essential
+    </note>
     <note priority="high" time="1255664893">
         set policy for handling keymaps (console-data) via debconf seed
+    </note>
+    <note priority="high" time="1256956813">
+        Restart lwresd when resolv.conf changes
     </note>
     <note priority="medium" time="1255660374">
         keybinding eterm -&gt; xterm
@@ -60,9 +66,6 @@
     <note priority="medium" time="1255756356">
         Have portmap NOT bind to loopback
     </note>
-    <note priority="medium" time="1255857604">
-        split config package into essential vs. non-essential
-    </note>
     <note priority="medium" time="1255857622">
         move config files written by setup-debian to essential config package
     </note>
@@ -81,7 +84,7 @@
     <note priority="medium" time="1256371907">
         Change setup script to not do work that -bootconfig is doing
     </note>
-    <note priority="low" time="1255661830">
+    <note priority="low" time="1255661830" done="1256956882">
         add lwresd?
     </note>
     <note priority="low" time="1255662227">
