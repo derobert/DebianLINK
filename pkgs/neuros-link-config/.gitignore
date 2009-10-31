@@ -1,5 +1,6 @@
 debian/files
 debian/*.log
+debian/*.debhelper
 debian/neuros-link-bootconfig
 debian/neuros-link-config
 debian/*.substvars
