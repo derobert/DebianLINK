@@ -1,0 +1,5 @@
+usr/bin/link-go-rw
+usr/bin/link-go-ro
+usr/bin/link-aptitude
+usr/bin/link-safe-upgrade
+usr/bin/link-full-upgrade

@@ -39,6 +39,9 @@
     <note priority="medium" time="1255661882" done="1255854904">
         gtk, e16 font sizes
     </note>
+    <note priority="medium" time="1255661892" done="1256961220">
+        auto-start x11
+    </note>
     <note priority="medium" time="1255755996" done="1256792746">
         Do something about /var/log/apt
     </note>
@@ -56,9 +59,6 @@
     </note>
     <note priority="medium" time="1255660429">
         nuke virtual desktop
-    </note>
-    <note priority="medium" time="1255661892" done="1256961220">
-        auto-start x11
     </note>
     <note priority="medium" time="1255662076">
         ttf-mscorefonts-installer
@@ -96,7 +96,7 @@
     <note priority="low" time="1255755544">
         minimize logging by editing rsyslogd config
     </note>
-    <note priority="low" time="1255756217">
+    <note priority="low" time="1255756217" done="1256965061">
         Configure apt, etc. to mount rootfs rw when needed — does not actually appear possible, will use a simple shell script, I gues...
     </note>
     <note priority="low" time="1255857539">

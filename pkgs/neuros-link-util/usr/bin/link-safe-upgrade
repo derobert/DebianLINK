@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if ! link-go-rw; then
+	echo "ERROR: could not mount root filesystem read-write" >&1
+	exit 1
+fi
+
+aptitude update
+aptitude safe-upgrade
+
+link-go-ro

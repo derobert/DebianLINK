@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+build:
+
+binary: binary-arch binary-indep
+
+binary-arch:
+
+binary-indep:
+	dh_prep
+	mkdir -p debian/tmp
+	cp -r --preserve=timestamps usr debian/tmp/usr
+	dh_install --fail-missing --autodest --sourcedir=debian/tmp
+	dh_gencontrol
+	dh_installdeb
+	dh_installdocs
+	dh_installchangelogs
+	dh_md5sums
+	dh_builddeb
+
+clean:
+	dh_clean

@@ -1,0 +1,27 @@
+Source: neuros-link-util
+Section: admin
+Priority: optional
+Maintainer: Anthony DeRobertis <anthony@derobert.net>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.8.3
+
+Package: neuros-link-util
+Architecture: all
+Depends: aptitude
+Recommends: sudo
+Description: Utilities to make life on the LINK easier
+ This package contains various utilities to make life on the LINK easier. They
+ include:
+ .
+ - link-go-rw: Remounts the root filesystem in read/write mode.
+ - link-go-ro: Remounts the root filesystem in read-only mode.
+ .
+ In addition, there are several Aptitude wrappers, which all handle making
+ the root filesystem read/write for the duration:
+ .
+ - link-aptitude: Runs aptitude in interactive mode
+ - link-safe-upgrade: Runs update and a safe (normal) upgrade
+ - link-full-upgrade: Runs update and a full (dist) upgrade
+ .
+ All of these need root access, and will re-invoke themselves through sudo if
+ needed.

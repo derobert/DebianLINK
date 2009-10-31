@@ -1,0 +1,4 @@
+#!/bin/sh
+
+link-go-rw && aptitude
+link-go-ro
