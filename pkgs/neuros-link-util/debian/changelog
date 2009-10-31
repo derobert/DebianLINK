@@ -1,3 +1,9 @@
+neuros-link-util (0.1~a2) hydrogen; urgency=low
+
+  * Yeah, naturally, forgot the auto-sudo in a few commands. Oops
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Sat, 31 Oct 2009 01:01:00 -0400
+
 neuros-link-util (0.1~a1) hydrogen; urgency=low
 
   * Initial release.
