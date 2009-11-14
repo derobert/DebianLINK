@@ -1,0 +1,11 @@
+Source: neuros-link-art
+Section: graphics
+Priority: optional
+Maintainer: Anthony DeRobertis <anthony@derobert.net>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.8.3
+
+Package: neuros-link-art
+Architecture: all
+Description: Various artwork for the LINK
+ This package contains various "art"work for the LINK.

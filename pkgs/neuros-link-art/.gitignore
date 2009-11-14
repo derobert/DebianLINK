@@ -1,0 +1,5 @@
+debian/files
+debian/*.log
+debian/neuros-link-art
+debian/*.substvars
+debian/tmp
