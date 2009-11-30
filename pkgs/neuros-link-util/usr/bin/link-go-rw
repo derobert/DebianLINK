@@ -5,3 +5,4 @@ if [ `id -u` != 0 ]; then
 fi
 
 mount -o remount,rw,compress /
+mount -o remount,rw /boot

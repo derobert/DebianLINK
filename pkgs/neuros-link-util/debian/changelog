@@ -1,3 +1,9 @@
+neuros-link-util (0.1~a3) hydrogen; urgency=low
+
+  * Have link-go-r? scripts handle /boot as well.
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Mon, 30 Nov 2009 14:04:25 -0500
+
 neuros-link-util (0.1~a2) hydrogen; urgency=low
 
   * Yeah, naturally, forgot the auto-sudo in a few commands. Oops
