@@ -1,3 +1,9 @@
+neuros-link-config (0.1~a14) hydrogen; urgency=low
+
+  * boot should be mounted ro, I think. link-go-rw will set it rw.
+
+ -- Anthony DeRobertis <anthony@derobert.net>  Mon, 30 Nov 2009 15:26:47 -0500
+
 neuros-link-config (0.1~a13) hydrogen; urgency=low
 
   * disable composite

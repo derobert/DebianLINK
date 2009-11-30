@@ -1,7 +1,7 @@
 # dev             path             fs    opt                 dump check
 LABEL=LINK-ROOTFS /                btrfs ro,compress         0    1
 LABEL=LINK-HOME   /home            ext4  defaults            0    2
-LABEL=LINK-BOOT   /boot            ext2  defaults            0    3
+LABEL=LINK-BOOT   /boot            ext2  ro                  0    3
 
 proc              /proc            proc  defaults            0    0 
 tmp               /tmp             tmpfs size=16m,mode=1777  0    0
