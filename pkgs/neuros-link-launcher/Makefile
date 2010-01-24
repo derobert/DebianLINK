@@ -1,6 +1,6 @@
 PKG_CONFIG_PKGS := ecore ecore-evas ecore-x evas
 CPPFLAGS := -Wall -Werror $(shell pkg-config --cflags $(PKG_CONFIG_PKGS))
-CFLAGS := -g
+CFLAGS := --std=gnu99 -g
 LDFLAGS := $(shell pkg-config --libs $(PKG_CONFIG_PKGS))
 
 all: bin/nl-launcher bin/nl-launcher.eet

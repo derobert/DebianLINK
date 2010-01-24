@@ -1,9 +1,25 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <Evas.h>
-#include <Ecore.h>
 #include <Ecore_Evas.h>
+#include <Ecore.h>
 #include <Ecore_X.h>
+#include <Evas.h>
+#include <pwd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <math.h>
+
+typedef struct {
+	const char *icon;
+	const char *cmd;
+} LauncherButton;
+
+static const LauncherButton launcher_items[] = {
+	{ "tv", "iceweasel" },
+	{ "movie", "/opt/xbmc/bin/xbmc" }
+};
 
 void fatal(const char *err) {
     fprintf(stderr, "%s\n", err);
@@ -37,7 +53,54 @@ Ecore_X_Screen_Size get_screen_size(Ecore_Evas *ee) {
 	//ecore_x_randr_get_screen_info_fetch();
 	Ecore_X_Screen_Size size = ecore_x_randr_current_screen_size_get(root);
 
+	double aspect = (double)size.width / size.height;
+	if (fabs(aspect - 8.0/3) < 0.1) {
+		// kluge: must be two 4:3 monitors, i.e., dero's setup. really
+		// need to get size of single destkop...
+		size.width /= 2;
+	}
+
 	return size;
+}
+
+char *find_wallpaper() {
+	/* returns a string, which you must free. */
+
+	const char *exts[] = {".png", ".jpg"};
+	const char *paths[] = {
+		NULL, // will fill with ~/.wallpaper
+		"../neuros-link-art/usr/share/images/link/desktop",
+		"/usr/share/images/link/desktop"
+	};
+
+	const char *home = getenv("HOME");
+	struct passwd *passwd = getpwuid(getuid());
+	if (!home && passwd)
+		home = passwd->pw_dir;
+
+	char buf[256];
+	if (home) {
+		buf[0] = 0;
+		strncat(buf, home, sizeof(buf)-1);
+		strncat(buf, "/.wallpaper", sizeof(buf)-1-strlen(buf));
+		paths[0] = buf;
+	}
+
+	// finally, we can search!
+	for (size_t a = 0; a < sizeof(paths)/sizeof(char*); ++a) {
+		for (size_t b = 0; b< sizeof(exts)/sizeof(char*); ++b) {
+			char filename[256];
+			filename[0] = 0;
+			strncat(filename, paths[a], sizeof(filename)-1);
+			strncat(filename, exts[b], sizeof(filename)-1-strlen(filename));
+
+			struct stat sbuf;
+			if (0 == stat(filename, &sbuf))
+				return strdup(filename);
+		}
+	}
+
+	return NULL;
 }
 
 int main(int argc, char **argv) {
@@ -56,20 +119,16 @@ int main(int argc, char **argv) {
 
     evas = ecore_evas_get(ee);
 
-    // Evas_Object *bg;
-    // bg = evas_object_rectangle_add(evas);
-    // evas_object_resize(bg, (double)WIDTH, (double)HEIGHT);
-    // evas_object_color_set(bg, 255, 255, 0, 255);
-    // evas_object_show(bg);
-
-    /* Insert Object Here */
-    Evas_Object *img = evas_object_image_add(evas);
-    evas_object_image_file_set(img, "test.png", "");
-    evas_object_move(img, 0, 0);
-    evas_object_resize(img, 768, 768);
-    evas_object_image_fill_set(img, 0, 0, 768, 768);
-    evas_object_show(img);
-
+	char *wallpaper;
+	if ((wallpaper = find_wallpaper())) {
+		Evas_Object *bg = evas_object_image_add(evas);
+		evas_object_image_file_set(bg, wallpaper, "");
+		evas_object_move(bg, 0, 0);
+		evas_object_resize(bg, sz.width, sz.height);
+		evas_object_image_fill_set(bg, 0, 0, sz.width, sz.height);
+		evas_object_show(bg);
+		free(wallpaper);
+	}
 
     ecore_evas_show(ee);
     ecore_main_loop_begin();
