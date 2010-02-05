@@ -1,25 +1,18 @@
-PKG_CONFIG_PKGS := ecore ecore-evas ecore-x evas
+PKG_CONFIG_PKGS := ecore ecore-evas ecore-x evas edje
 CPPFLAGS := -Wall -Werror $(shell pkg-config --cflags $(PKG_CONFIG_PKGS))
 CFLAGS := --std=gnu99 -g
 LDFLAGS := $(shell pkg-config --libs $(PKG_CONFIG_PKGS))
 
-all: bin/nl-launcher 
-all-broken: bin/nl-launcher.eet
+all: bin/nl-launcher bin/nl-launcher.edj
 
 clean: 
 	rm -Rf bin/ obj/
 
-bin/nl-launcher: obj/main.o
+bin/nl-launcher: obj/nl-launcher.o
 	@mkdir -p bin
 	$(CC) $(LDFLAGS) -o "$@" "$<"
 
-bin/nl-launcher.eet: obj/arrow.png obj/movie.png obj/tv.png
-	# This doesn't work; apparently there is some other way to put
-	# images into an EET file... But the eet tool doesn't seem to do it.
-	# So, whatever, just load png files!
-	eet -i "$@" arrow.png obj/arrow.png 0
-	eet -i "$@" movie.png obj/movie.png 0
-	eet -i "$@" tv.png obj/tv.png 0
+bin/nl-launcher.edj: edje/nl-launcher.edc obj/arrow.png obj/arrow-flipv.png obj/movie.png obj/tv.png obj/wtf-hydrogen.png
 
 obj/%.o: src/%.c
 	@mkdir -p obj
@@ -27,3 +20,12 @@ obj/%.o: src/%.c
 
 obj/%.png: img-in/%.svg
 	inkscape -C -e "$@" "$<"
+
+obj/%.png: img-in/%.xcf
+	xcf2png -o "$@" "$<"
+
+%-flipv.png: %.png
+	convert "$<" -flip "$@"
+
+bin/%.edj: edje/%.edc
+	edje_cc -id obj "$<" "$@"

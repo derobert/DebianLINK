@@ -1,0 +1,179 @@
+images {
+	image: "arrow.png" LOSSY 95;
+	image: "arrow-flipv.png" LOSSY 95;
+	image: "movie.png" LOSSY 95;
+	image: "tv.png" LOSSY 95;
+	image: "wtf-hydrogen.png" LOSSY 50;
+}
+
+collections {
+	group {
+		name: "main";
+		min: 1 1;
+		max: 1920 1080;
+		parts {
+			part {
+				name: "background";
+				type: IMAGE;
+				mouse_events: 0;
+				description {
+					state: "default" 0.0;
+					aspect: 1.777777777 1.777777777;
+					aspect_preference: BOTH;
+					rel1 {
+						relative: 0.0 0.0;
+						offset: 0 0;
+					}
+					rel2 {
+						relative: 1.0 1.0;
+						offset: 0 0;
+					}
+					image {
+						normal: "wtf-hydrogen.png";
+					}
+				}
+			}
+
+			part {
+				name: "iconbox-outer";
+				type: RECT;
+				description {
+					state: "default" 0.0;
+					rel1 {
+						offset: -5 -5;
+						to: "iconbox-inner";
+					}
+					rel2 {
+						offset: 5 5;
+						to: "iconbox-inner";
+					}
+					color: 255 255 255 20;
+				}
+			}
+
+			part {
+				name: "iconbox-inner";
+				type: RECT;
+				description {
+					state: "default" 0.0;
+					aspect: 3 3;
+					aspect_preference: BOTH;
+					rel1 {
+						relative: .2 .2;
+					}
+					rel2 {
+						relative: .8 .8;
+					}
+					color: 0 0 0 130;
+				}
+			}
+
+			part {
+				name: "icon-tv";
+				type: IMAGE;
+				mouse_events: 1;
+				description {
+					state: "default" 0.0;
+					aspect: 1 1;
+					aspect_preference: BOTH;
+					rel1 {
+						relative: 0.0 0.0;
+						to: "iconbox-inner";
+					}
+					rel2 {
+						relative: 0.33333 1.0;
+						to: "iconbox-inner";
+					}
+					image {
+						normal: "tv.png";
+					}
+				}
+			}
+			part {
+				name: "icon-movie";
+				type: IMAGE;
+				mouse_events: 1;
+				description {
+					state: "default" 0.0;
+					aspect: 1 1;
+					aspect_preference: BOTH;
+					rel1 {
+						relative: 1.0 0.0;
+						to: "icon-tv";
+					}
+					rel2 {
+						relative: 2.0 1.0;
+						to: "icon-tv";
+					}
+					image {
+						normal: "movie.png";
+					}
+				}
+			}
+			part {
+				name: "icon-chicken";
+				type: IMAGE;
+				mouse_events: 1;
+				description {
+					state: "default" 0.0;
+					aspect: 1 1;
+					aspect_preference: BOTH;
+					rel1 {
+						relative: 2.0 0.0;
+						to: "icon-tv";
+					}
+					rel2 {
+						relative: 3.0 1.0;
+						to: "icon-tv";
+					}
+					image {
+						normal: "wtf-hydrogen.png";
+					}
+				}
+			}
+
+			part {
+				name: "pointer-bottom";
+				type: IMAGE;
+				mouse_events: 0;
+				description {
+					state: "default" 0.0;
+					aspect: 3.34782608695652173913 3.34782608695652173913;
+					aspect_preference: BOTH;
+					rel1 {
+						relative: 0.0 0.9;
+						to: "icon-movie";
+					}
+					rel2 {
+						relative: 1.0 1.100;
+						to: "icon-movie";
+					}
+					image {
+						normal: "arrow.png";
+					}
+				}
+			}
+			part {
+				name: "pointer-top";
+				type: IMAGE;
+				mouse_events: 0;
+				description {
+					state: "default" 0.0;
+					aspect: 3.34782608695652173913 3.34782608695652173913;
+					aspect_preference: BOTH;
+					rel1 {
+						relative: 0.0 -0.1;
+						to: "icon-movie";
+					}
+					rel2 {
+						relative: 1.0 0.1;
+						to: "icon-movie";
+					}
+					image {
+						normal: "arrow-flipv.png";
+					}
+				}
+			}
+		}
+	}
+}

@@ -132,7 +132,7 @@ void make_buttons(Evas *evas, int screen_w, int screen_h) {
 		Evas_Object *btn = evas_object_rectangle_add(evas);
 		evas_object_resize(btn, button_size, button_size);
 		evas_object_move(btn, left_absolute, top_absolute);
-		evas_object_color_set(btn, 0, 0, 0, 100);
+		evas_object_color_set(btn, 20, 20, 30, 150);
 		evas_object_show(btn);
 
 		Evas_Object *btni = evas_object_image_filled_add(evas);
