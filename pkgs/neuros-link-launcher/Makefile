@@ -12,7 +12,7 @@ bin/nl-launcher: obj/nl-launcher.o
 	@mkdir -p bin
 	$(CC) $(LDFLAGS) -o "$@" "$<"
 
-bin/nl-launcher.edj: edje/nl-launcher.edc obj/arrow.png obj/arrow-flipv.png obj/movie.png obj/tv.png obj/wtf-hydrogen.png
+bin/nl-launcher.edj: edje/nl-launcher.edc obj/arrow.png obj/arrow-flipv.png obj/movie.png obj/tv.png obj/wtf-hydrogen.png obj/xterm.png
 
 obj/%.o: src/%.c
 	@mkdir -p obj

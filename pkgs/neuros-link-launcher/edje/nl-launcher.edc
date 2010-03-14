@@ -3,6 +3,7 @@ images {
 	image: "arrow-flipv.png" LOSSY 95;
 	image: "movie.png" LOSSY 95;
 	image: "tv.png" LOSSY 95;
+	image: "xterm.png" LOSSY 95;
 	image: "wtf-hydrogen.png" LOSSY 50;
 }
 
@@ -127,7 +128,7 @@ collections {
 						to: "icon-tv";
 					}
 					image {
-						normal: "wtf-hydrogen.png";
+						normal: "xterm.png";
 					}
 				}
 			}
