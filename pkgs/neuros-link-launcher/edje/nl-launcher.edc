@@ -153,6 +153,36 @@ collections {
 						normal: "arrow.png";
 					}
 				}
+				description {
+					state: "at-tv" 0.0;
+					inherit: "default" 0.0;
+					rel1 {
+						to: "icon-tv";
+					}
+					rel2 {
+						to: "icon-tv";
+					}
+				}
+				description {
+					state: "at-movie" 0.0;
+					inherit: "default" 0.0;
+					rel1 {
+						to: "icon-movie";
+					}
+					rel2 {
+						to: "icon-movie";
+					}
+				}
+				description {
+					state: "at-chicken" 0.0;
+					inherit: "default" 0.0;
+					rel1 {
+						to: "icon-chicken";
+					}
+					rel2 {
+						to: "icon-chicken";
+					}
+				}
 			}
 			part {
 				name: "pointer-top";
@@ -173,6 +203,68 @@ collections {
 					image {
 						normal: "arrow-flipv.png";
 					}
+				}
+				description {
+					state: "at-tv" 0.0;
+					inherit: "default" 0.0;
+					rel1 {
+						to: "icon-tv";
+					}
+					rel2 {
+						to: "icon-tv";
+					}
+				}
+				description {
+					state: "at-movie" 0.0;
+					inherit: "default" 0.0;
+					rel1 {
+						to: "icon-movie";
+					}
+					rel2 {
+						to: "icon-movie";
+					}
+				}
+				description {
+					state: "at-chicken" 0.0;
+					inherit: "default" 0.0;
+					rel1 {
+						to: "icon-chicken";
+					}
+					rel2 {
+						to: "icon-chicken";
+					}
+				}
+			}
+			programs {
+				program {
+					signal: "mouse,in";
+					source: "icon-tv";
+
+					action: STATE_SET "at-tv" 0.0;
+					target: "pointer-bottom";
+					target: "pointer-top";
+
+					transition: SINUSOIDAL 0.33;
+				}
+				program {
+					signal: "mouse,in";
+					source: "icon-movie";
+
+					action: STATE_SET "at-movie" 0.0;
+					target: "pointer-bottom";
+					target: "pointer-top";
+
+					transition: SINUSOIDAL 0.33;
+				}
+				program {
+					signal: "mouse,in";
+					source: "icon-chicken";
+
+					action: STATE_SET "at-chicken" 0.0;
+					target: "pointer-bottom";
+					target: "pointer-top";
+
+					transition: SINUSOIDAL 0.33;
 				}
 			}
 		}
