@@ -28,4 +28,4 @@ obj/%.png: img-in/%.xcf
 	convert "$<" -flip "$@"
 
 bin/%.edj: edje/%.edc
-	edje_cc -id obj "$<" "$@"
+	edje_cc -id obj -fd /usr/share/fonts/truetype/ttf-dejavu "$<" "$@"

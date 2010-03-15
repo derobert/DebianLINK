@@ -134,6 +134,61 @@ collections {
 			}
 
 			part {
+				name: "label";
+				type: TEXT;
+				mouse_events: 0;
+
+				description {
+					state: "default" 0.0;
+					color: 255 255 0 100;
+					rel1 {
+						relative: 0.0 0.8;
+						to: "icon-movie";
+					}
+					rel2 {
+						relative: 1.0 0.9;
+						to: "icon-movie";
+					}
+					text {
+						font: "DejaVu Sans:weight=bold";
+						size: 24;
+						text: "Local Media";
+					}
+				}
+				description {
+					state: "at-tv" 0.0;
+					inherit: "default" 0.0;
+					rel1 {
+						relative: 0.0 0.1;
+						to: "icon-tv";
+					}
+					rel2 {
+						relative: 1.0 0.2;
+						to: "icon-tv";
+					}
+					text {
+						text: "Interwebs";
+					}
+				}
+				description {
+					state: "at-movie" 0.0;
+					inherit: "default" 0.0;
+				}
+				description {
+					state: "at-chicken" 0.0;
+					inherit: "default" 0.0;
+					rel1 {
+						to: "icon-chicken";
+					}
+					rel2 {
+						to: "icon-chicken";
+					}
+					text {
+						text: "Sacrifice Chickens";
+					}
+				}
+			}
+			part {
 				name: "pointer-bottom";
 				type: IMAGE;
 				mouse_events: 0;
@@ -248,6 +303,13 @@ collections {
 				}
 				program {
 					signal: "mouse,in";
+					source: "icon-tv";
+
+					action: STATE_SET "at-tv" 0.0;
+					target: "label";
+				}
+				program {
+					signal: "mouse,in";
 					source: "icon-movie";
 
 					action: STATE_SET "at-movie" 0.0;
@@ -258,6 +320,13 @@ collections {
 				}
 				program {
 					signal: "mouse,in";
+					source: "icon-movie";
+
+					action: STATE_SET "at-movie" 0.0;
+					target: "label";
+				}
+				program {
+					signal: "mouse,in";
 					source: "icon-chicken";
 
 					action: STATE_SET "at-chicken" 0.0;
@@ -265,6 +334,13 @@ collections {
 					target: "pointer-top";
 
 					transition: SINUSOIDAL 0.33;
+				}
+				program {
+					signal: "mouse,in";
+					source: "icon-chicken";
+
+					action: STATE_SET "at-chicken" 0.0;
+					target: "label";
 				}
 			}
 		}
