@@ -32,17 +32,6 @@
 #include <unistd.h>
 #include <math.h>
 
-typedef struct {
-	const char *icon;
-	const char *cmd;
-} LauncherButton;
-
-static const LauncherButton g_launcher_buttons[] = {
-	{ "obj/tv.png", "iceweasel" },
-	{ "obj/movie.png", "/opt/xbmc/bin/xbmc" },
-	{ "obj/chicken.png", "e16" },
-};
-
 void fatal(const char *err) {
     fprintf(stderr, "%s\n", err);
     abort();
@@ -140,25 +129,12 @@ int main(int argc, char **argv) {
     ecore_evas_borderless_set(ee, 1);
     ecore_evas_fullscreen_set(ee, 1);
 
-
     Evas *evas = ecore_evas_get(ee);
     Evas_Object *edje = edje_object_add(evas);
     edje_object_file_set(edje, theme, "main");
     evas_object_move(edje, 0, 0);
     evas_object_resize(edje, sz.width, sz.height);
     evas_object_show(edje);
-
-
-	// char *wallpaper;
-	// if ((wallpaper = find_wallpaper())) {
-	// 	Evas_Object *bg = evas_object_image_filled_add(evas);
-	// 	evas_object_image_file_set(bg, wallpaper, "");
-	// 	evas_object_image_smooth_scale_set(bg, 1);
-	// 	evas_object_move(bg, 0, 0);
-	// 	evas_object_resize(bg, sz.width, sz.height);
-	// 	evas_object_show(bg);
-	// 	free(wallpaper);
-	// }
 
     ecore_evas_show(ee);
     ecore_main_loop_begin();
